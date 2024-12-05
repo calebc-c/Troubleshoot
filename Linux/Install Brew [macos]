@@ -1,0 +1,21 @@
+# First install Homebrew if you don't have it
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+
+
+# After installation, Homebrew will tell you to add PATH
+
+- Run these commands in your terminal to add Homebrew to your PATH:
+    echo >> /Users/cs/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/cs/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+- Run brew help to get started
+- Further documentation:
+    https://docs.brew.sh
+
+
+    OR
+
+echo 'eval "$(/opt/homebrew/bin/brew)"' >> ~/.zshrc
+eval "$(/opt/homebrew/bin/brew)"
