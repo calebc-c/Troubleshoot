@@ -1,0 +1,23 @@
+To convert an OVA file to QCOW2 format, you'll need to first extract the VMDK from the OVA file (since OVA is essentially a tarball), then convert it to QCOW2. Here are the steps:
+
+1. First, extract the OVA file:
+```bash
+tar -xvf your_file.ova
+```
+
+2. This will extract the VMDK file. Then convert the VMDK to QCOW2:
+```bash
+qemu-img convert -f vmdk -O qcow2 your_extracted_file.vmdk output_file.qcow2
+```
+
+Replace "your_file.ova" with your actual OVA filename, "your_extracted_file.vmdk" with the extracted VMDK filename, and "output_file.qcow2" with your desired output filename.
+
+If you need to check the format of your source file:
+```bash
+qemu-img info your_file
+```
+
+If you run into any permissions issues, you might need to use `sudo`:
+```bash
+sudo qemu-img convert -f vmdk -O qcow2 your_extracted_file.vmdk output_file.qcow2
+```
